@@ -1,32 +1,8 @@
-name: Hello Workflow
-
-on:
-  push:
-    branches:
-      - main
-
+name: Hello World
+on: [push]
 jobs:
-  hello-world:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'  # Version de Python que tu souhaites
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Si tu as un fichier requirements.txt
-
-      - name: Display Hello World
-        run: echo "Hello, World!"
-
-      - name: Run Python script
-        run: |
-          python my_script.py  # Remplace "my_script.py" par ton script Python
-          
+hello:
+runs-on: ubuntu-latest
+steps:
+- name: Hello step
+run: echo "Hello World from GitHub Actions!"
